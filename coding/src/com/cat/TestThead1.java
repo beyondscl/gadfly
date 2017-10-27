@@ -31,7 +31,7 @@ public class TestThead1 extends Thread {
         try {
             while (j > 0) {
                 System.out.println(Thread.currentThread().getName() + ":" + j--);
-                Thread.sleep(1000);
+                Thread.sleep(800);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -51,7 +51,7 @@ class Thead1 implements Runnable {
 //            }
             while (j > 0) {
                 System.out.println(Thread.currentThread().getName() + ":" + j--);
-                Thread.sleep(1000);
+                Thread.sleep(900);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
