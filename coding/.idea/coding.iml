@@ -2,7 +2,11 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/web/classes" />
+<<<<<<< HEAD
     <output-test url="file://$MODULE_DIR$/web/classes" />
+=======
+    <output-test url="file:///test/coding" />
+>>>>>>> 6c1a071919cd1c87ba884d3fe089784d78ba5992
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/com" isTestSource="false" />
