@@ -1,0 +1,74 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ming_gang",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.25,
+  "sample": 20,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "x": [],
+      "scaleX": [],
+      "scaleY": []
+    },
+    "paths": {
+      "ming": {
+        "props": {
+          "scaleX": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 0.25,
+              "value": 5
+            },
+            {
+              "frame": 0.45,
+              "value": 0.5
+            },
+            {
+              "frame": 1.25,
+              "value": 1.1
+            }
+          ],
+          "scaleY": []
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 0,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 0.25,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 0.4,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 0.55,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 0.55,
+      "func": "",
+      "params": []
+    }
+  ]
+}

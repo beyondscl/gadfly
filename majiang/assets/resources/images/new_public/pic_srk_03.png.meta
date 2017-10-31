@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "4c5f1baf-b876-41da-93c9-a8f95bdfa053",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "pic_srk_03": {
+      "ver": "1.0.3",
+      "uuid": "d3197988-c4d4-4e8d-a102-eefb871947e2",
+      "rawTextureUuid": "4c5f1baf-b876-41da-93c9-a8f95bdfa053",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 588,
+      "height": 65,
+      "rawWidth": 588,
+      "rawHeight": 65,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
