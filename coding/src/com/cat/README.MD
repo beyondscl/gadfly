@@ -9,5 +9,5 @@ location:hangzhou krSpace
 ####`3.Test3集合基本应用`
 ####`4.基础知识`
 ####`5.Test2 ->到底是值传递还是引用传递`
-`时间：2017年11月1日09:26:09jdk更新为1.8`
-#### `新增包TestNetty,全面学习netty`
+#### 时间：2017年11月1日09:26:09jdk更新为
+`TestNiov2包 讲解4socket四种改进方式 jdk 1.6`

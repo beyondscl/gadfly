@@ -15,6 +15,7 @@ import java.nio.channels.FileChannel;
  */
 public class NioTest1 {
     public static void main(String[] args) throws IOException {
+        //随机文件读写
         RandomAccessFile aFile = new RandomAccessFile("F:\\bootstrap\\bower.json", "rw");
         FileChannel inChannel = aFile.getChannel();
         ByteBuffer buf = ByteBuffer.allocate(48);

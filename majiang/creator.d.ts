@@ -5403,7 +5403,7 @@ declare module cc {
 		``` 
 		*/
 		constructor(poolHandlerComp?: {prototype: Component}|string);		
-		/** !#en The pool handler component, it could be the class name or the constructor.
+		/** !#en The pool Handler component, it could be the class name or the constructor.
 		!#zh 缓冲池处理组件，用于节点的回收和复用逻辑，这个属性可以是组件类名或组件的构造函数。 */
 		poolHandlerComp: Function|string;		
 		/**
@@ -6550,7 +6550,7 @@ declare module cc {
 		-如果 Transition type 选择 Button.Transition.COLOR，按钮会对目标颜色进行颜色之间的过渡。
 		-如果 Transition type 选择 Button.Transition.Sprite，按钮会对目标 Sprite 进行 Sprite 之间的过渡。 */
 		target: Node;		
-		/** !#en If Button is clicked, it will trigger event's handler
+		/** !#en If Button is clicked, it will trigger event's Handler
 		!#zh 按钮的点击事件列表。 */
 		clickEvents: Component.EventHandler[];	
 	}	
@@ -6883,16 +6883,16 @@ declare module cc {
 		/** !#en Set the tabIndex of the DOM input element, only useful on Web.
 		!#zh 修改 DOM 输入元素的 tabIndex，这个属性只有在 Web 上面修改有意义。 */
 		tabIndex: number;		
-		/** !#en The event handler to be called when EditBox began to edit text.
+		/** !#en The event Handler to be called when EditBox began to edit text.
 		!#zh 开始编辑文本输入框触发的事件回调。 */
 		editingDidBegan: Component.EventHandler;		
-		/** !#en The event handler to be called when EditBox text changes.
+		/** !#en The event Handler to be called when EditBox text changes.
 		!#zh 编辑文本输入框时触发的事件回调。 */
 		textChanged: Component.EventHandler;		
-		/** !#en The event handler to be called when EditBox edit ends.
+		/** !#en The event Handler to be called when EditBox edit ends.
 		!#zh 结束编辑文本输入框时触发的事件回调。 */
 		editingDidEnded: Component.EventHandler;		
-		/** !#en The event handler to be called when return key is pressed. Windows is not supported.
+		/** !#en The event Handler to be called when return key is pressed. Windows is not supported.
 		!#zh 当用户按下回车按键时的事件回调，目前不支持 windows 平台 */
 		editingReturn: Component.EventHandler;		
 		/**
@@ -7658,7 +7658,7 @@ declare module cc {
 		/** !#en The image used for the checkmark.
 		!#zh Toggle 处于选中状态时显示的图片 */
 		checkMark: Sprite;		
-		/** !#en If Toggle is clicked, it will trigger event's handler
+		/** !#en If Toggle is clicked, it will trigger event's Handler
 		!#zh Toggle 按钮的点击事件列表。 */
 		checkEvents: Component.EventHandler[];		
 		/**
@@ -8379,8 +8379,8 @@ declare module cc {
 		*/
 		static getXMLHttpRequest(): XMLHttpRequest;		
 		/**
-		Add custom supported types handler or modify existing type handler for download process.
-		@param extMap Custom supported types with corresponded handler
+		Add custom supported types Handler or modify existing type Handler for download process.
+		@param extMap Custom supported types with corresponded Handler
 		
 		@example 
 		```js
@@ -8392,8 +8392,8 @@ declare module cc {
 		*/
 		static addDownloadHandlers(extMap: any): void;		
 		/**
-		Add custom supported types handler or modify existing type handler for load process.
-		@param extMap Custom supported types with corresponded handler
+		Add custom supported types Handler or modify existing type Handler for load process.
+		@param extMap Custom supported types with corresponded Handler
 		
 		@example 
 		```js
@@ -13925,8 +13925,8 @@ declare module cc {
 	
 	export module Component {		
 		/** !#en
-		Component will register a event to target component's handler.
-		And it will trigger the handler when a certain event occurs.
+		Component will register a event to target component's Handler.
+		And it will trigger the Handler when a certain event occurs.
 		
 		!@zh
 		“EventHandler” 类用来设置场景中的事件回调，
@@ -13939,7 +13939,7 @@ declare module cc {
 			/** !#en Component name
 			!#zh 目标组件名 */
 			component: string;			
-			/** !#en Event handler
+			/** !#en Event Handler
 			!#zh 响应事件函数名 */
 			handler: string;			
 			/** !#en Custom Event Data
@@ -13953,7 +13953,7 @@ declare module cc {
 			static emitEvents(events: Component.EventHandler[], ...params: any[]): void;			
 			/**
 			!#en Emit event with params
-			!#zh 触发目标组件上的指定 handler 函数，该参数是回调函数的参数值（可不填）。
+			!#zh 触发目标组件上的指定 Handler 函数，该参数是回调函数的参数值（可不填）。
 			@param params params
 			
 			@example 
@@ -13962,7 +13962,7 @@ declare module cc {
 			var eventHandler = new cc.Component.EventHandler();
 			eventHandler.target = newTarget;
 			eventHandler.component = "MainMenu";
-			eventHandler.handler = "OnClick"
+			eventHandler.Handler = "OnClick"
 			eventHandler.emit(["param1", "param2", ....]);
 			``` 
 			*/
@@ -14652,7 +14652,7 @@ declare module cc {
 		export class Downloader {			
 			/**
 			Constructor of Downloader, you can pass custom supported types.
-			@param extMap Custom supported types with corresponded handler
+			@param extMap Custom supported types with corresponded Handler
 			
 			@example 
 			```js
@@ -14664,8 +14664,8 @@ declare module cc {
 			*/
 			constructor(extMap: any);			
 			/**
-			Add custom supported types handler or modify existing type handler.
-			@param extMap Custom supported types with corresponded handler 
+			Add custom supported types Handler or modify existing type Handler.
+			@param extMap Custom supported types with corresponded Handler
 			*/
 			addHandlers(extMap: any): void;		
 		}	
@@ -14688,7 +14688,7 @@ declare module cc {
 		export class Loader {			
 			/**
 			Constructor of Loader, you can pass custom supported types.
-			@param extMap Custom supported types with corresponded handler
+			@param extMap Custom supported types with corresponded Handler
 			
 			@example 
 			```js
@@ -14700,8 +14700,8 @@ declare module cc {
 			*/
 			constructor(extMap: any);			
 			/**
-			Add custom supported types handler or modify existing type handler.
-			@param extMap Custom supported types with corresponded handler 
+			Add custom supported types Handler or modify existing type Handler.
+			@param extMap Custom supported types with corresponded Handler
 			*/
 			addHandlers(extMap: any): void;		
 		}	
@@ -17116,7 +17116,7 @@ declare module cc.js {
 		stupid Baidu guys modify Array.prototype.indexOf for all pages loaded,
 		their version changes strict comparison to non-strict comparison,
 		it also ignores the second parameter of the original API,
-		and this will cause event handler enter infinite loop.
+		and this will cause event Handler enter infinite loop.
 		Baidu developers, if you ever see this documentation,
 		here is the standard: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 		Seriously !
