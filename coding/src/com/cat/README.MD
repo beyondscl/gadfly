@@ -4,6 +4,9 @@ time: 2017年10月26日09:51:51
 author：Leng Tingxue
 location:hangzhou krSpace
 ```
+```
+技巧1：使用的时候多进去看看官方注释，类结构等等
+```
 #### `1.TestThead1 -> 线程基础应用`
 ####`2.文件基本应用`
 ####`3.Test3集合基本应用`

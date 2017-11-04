@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
  * 改进的地方：将接入的ｓｏｃｋｅｔ封装成ｔａｓｋ放入线程池中
  * 弊端：１．ｉｏ　ｗ／ｒ的时候是阻塞的，这样队列中的ｓｏｃｋｅｔ会一直阻塞，可查看ｉｏ文档
  * 　　　当网络不稳定，数据量大，第三方接口慢等问题都会拖慢系统
- *      2．阻塞队列也会成一个瓶颈
- *      ３．如果后面的全部阻塞会导致ａｃｃｅｐｔｅｒ也阻塞，服务器觉得应答等一系列问题
+ * 2．阻塞队列也会成一个瓶颈
+ * ３．如果后面的全部阻塞会导致ａｃｃｅｐｔｅｒ也阻塞，服务器觉得应答等一系列问题
  */
 public class ServerSocketv2 {
 
@@ -29,7 +29,7 @@ public class ServerSocketv2 {
         ServerSocket serverSocket = new ServerSocket(8000);
         while (true) {
             Socket socket = serverSocket.accept();
-            new executor().execute(new Handler(socket));
+            new executor().execute(new Handlerv2(socket));
         }
     }
 }
@@ -47,10 +47,10 @@ class executor {
     }
 }
 
-class Handler implements Runnable {
+class Handlerv2 implements Runnable {
     Socket socket;
 
-    public Handler(Socket socket) {
+    public Handlerv2(Socket socket) {
         this.socket = socket;
     }
 
