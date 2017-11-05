@@ -15,19 +15,25 @@ import java.util.Date;
  * time:2017/11/4 0004
  * email:pettygadfly@gmail.com
  * doc:
+ *   这里只是简单的测试访问通过，还没有解决粘包拆包的问题
  */
-public class TestNettyv1 {
+public class TestNettyServerv1 {
     public static void main(String[] args) throws Exception {
+        //启动线程组reactor，一个监听端口，一个网络事件处理
         EventLoopGroup boos = new NioEventLoopGroup();
         EventLoopGroup work = new NioEventLoopGroup();
-        ServerBootstrap serverBootstrap = new ServerBootstrap();
+        ServerBootstrap serverBootstrap = new ServerBootstrap();//辅助类
         try {
+            //设置参数，
             serverBootstrap.group(boos, work)
-                    .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 1024)
-                    .childHandler(new ChildChannelHandler());
-            ChannelFuture channelFuture = serverBootstrap.bind("localhost", 9000);
+                    .channel(NioServerSocketChannel.class)//设置channel
+                    .option(ChannelOption.SO_BACKLOG, 1024)//设置非阻塞与缓冲区大小
+                    .childHandler(new ChildChannelHandler());//设置处理线程,比如日志，编解码
+            //绑定端口
+            ChannelFuture channelFuture = serverBootstrap.bind("localhost", 9001).sync();
+            //等待服务端监听端口关闭
             channelFuture.channel().closeFuture().sync();
+            System.out.println("start at localhost 9000");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
@@ -55,16 +61,18 @@ class Serverv1 extends ChannelInboundHandlerAdapter {
         String body = new String(req, "UTF-8");
         System.out.println("Serverv1 channelRead:" + body);
         ByteBuf resp = Unpooled.copiedBuffer(new Date().toString().getBytes());
-        ctx.write(resp);
+        ctx.write(resp); //不直接写入channel
     }
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-
+        ctx.flush();//将缓冲区数据写入channel
+        System.out.println("Serverv1 channelReadComplete:" +  new Date());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        ctx.close();
         super.exceptionCaught(ctx, cause);
     }
 }

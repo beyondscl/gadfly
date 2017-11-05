@@ -156,7 +156,7 @@ class Serverv3 implements Runnable {
             ByteBuffer readBuffer = ByteBuffer.allocate(1024);
             int readBytes = sc.read(readBuffer);//异步读取数据
             if (readBytes > 0) {
-                readBuffer.flip();
+                readBuffer.flip();//设置读取位置位置
                 byte[] bytes = new byte[readBuffer.remaining()];
                 readBuffer.get(bytes);
                 String body = new String(bytes, "UTF-8");
