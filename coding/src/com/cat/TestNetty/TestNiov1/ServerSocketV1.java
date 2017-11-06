@@ -14,7 +14,7 @@ import java.net.Socket;
  * doc:
  * 额外知识：
  * socket是基于tcp/ip的全双工链接
- * <p>
+ * <p/>
  * 概要：
  * 同步阻塞例子[bio通信模型]
  * 最简单的基础tcp的socket和serverSocket
@@ -22,10 +22,10 @@ import java.net.Socket;
  * client                Thread1
  * client --> accepter ->Thread2
  * client                Thread3
- * <p>
+ * <p/>
  * 分析：
  * 弊端：一个accepter压力大；1:1的线程处理性能差；入门级别而已
- * <p>
+ * <p/>
  * 测试：
  * 可以通过telnet测试,客户端双方统一编码格式
  */

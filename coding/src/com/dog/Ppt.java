@@ -13,9 +13,11 @@ public class Ppt {
 
     //3配置接口，采用set方法运行时设置值
     FastSotF fastSotF;
+
     public FastSotF getFastSotF() {
         return fastSotF;
     }
+
     public void setFastSotF(FastSotF fastSotF) {
         this.fastSotF = fastSotF;
     }

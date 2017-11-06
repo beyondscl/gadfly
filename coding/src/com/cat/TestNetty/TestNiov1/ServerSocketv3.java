@@ -14,34 +14,33 @@ import java.util.Set;
  * time:2017/11/3 0003
  * email:pettygadfly@gmail.com
  * doc:
- * <p>
+ * <p/>
  * nio简介：
  * 1.4 加入，本质还是同步非阻塞，但是叫做异步非阻塞也没问题，但是本质你要明白，使用poll/selector
  * 1.5 改进使用epoll，区别在于不受句柄限制
  * 1.7 才是真的aio，异步非阻塞。ａｓ*ServerSocket
- * <p>
+ * <p/>
  * 核心概念介绍：
  * buffer　数据交互必须使用buffer和channel
  * 八种数据类型除开Boolean，[byte,short,int,long, char , float,double]buffer
  * channel 主要分为:selectorChannel|fileChannel
  * selector 轮训活动的channel，【因为轮训所以叫做同步阻塞，如果是采用回调才能叫做真正的异步非阻塞】
- * <p>
+ * <p/>
  * io流是半双工的:一个流，同时只能单向传输
  * socket是全双工的:通道同时可以双向传输
  * 单工:只能单向传输的
- * <p>
+ * <p/>
  * 注意：【解决粘包拆包半包问题】
- * <p>
+ * <p/>
  * 可以查看netty笔记.doc文档
- *
+ * <p/>
  * 什么是多路复用：
- *  多个io阻塞复用到一个select上
- *  1.不受句柄限制，主要
- *  2.其它api简单，mmap加速内核等，系统开销小，不需要创建额外id线程，也不需要维护
- *  应用场景：
- *  服务器处理多个处于监听或者链接状态的套接字
- *  同时处理多种网络协议套接字
- *
+ * 多个io阻塞复用到一个select上
+ * 1.不受句柄限制，主要
+ * 2.其它api简单，mmap加速内核等，系统开销小，不需要创建额外id线程，也不需要维护
+ * 应用场景：
+ * 服务器处理多个处于监听或者链接状态的套接字
+ * 同时处理多种网络协议套接字
  */
 public class ServerSocketv3 {
 

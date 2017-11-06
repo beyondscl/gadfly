@@ -15,7 +15,7 @@ import java.util.Date;
  * time:2017/11/4 0004
  * email:pettygadfly@gmail.com
  * doc:
- *   这里只是简单的测试访问通过，还没有解决粘包拆包的问题
+ * 这里只是简单的测试访问通过，还没有解决粘包拆包的问题
  */
 public class TestNettyServerv1 {
     public static void main(String[] args) throws Exception {
@@ -67,7 +67,7 @@ class Serverv1 extends ChannelInboundHandlerAdapter {
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.flush();//将缓冲区数据写入channel
-        System.out.println("Serverv1 channelReadComplete:" +  new Date());
+        System.out.println("Serverv1 channelReadComplete:" + new Date());
     }
 
     @Override
