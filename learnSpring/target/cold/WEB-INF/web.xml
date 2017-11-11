@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <!--
+      源码：spring-web.jar
+      功能：字符集过滤器，设置编码集为UTF-8，解决POST的中文乱码问题。
+      参数说明：
+          encoding：request的编码集(request.setCharacterEncoding("UTF-8"))
+          forceEncoding：默认为false设置为true，response的编码集也强制转变成UTF-8(response.setCharacterEncoding("UTF-8"))
+  -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!--
+      源码：spring-web.jar
+      默认配置：/WEB-INF/${servlet-name}-servlet.xml，即/WEB-INF/cold-servlet.xml
+      覆盖默认配置：初始化参数：contextConfigLocation，参数多个值使用逗号隔开，如：a.xml,b.xml
+   -->
+  <servlet>
+    <servlet-name>cold</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath*:cold-servlet.xml</param-value>
+    </init-param>
+    <!-- 容器初始化加载此servlet -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cold</servlet-name>
+    <!--
+        一般有以下写法：
+        *.do    拦截固定格式的请求
+        /       rest风格的写法：拦截所有资源，需要针对静态资源做单独处理
+        /*      错误写法：会在处理完请求后拦截jsp导致404错误
+     -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
