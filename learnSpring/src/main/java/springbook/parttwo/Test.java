@@ -1,6 +1,8 @@
 package springbook.parttwo;
 
 import org.junit.runner.RunWith;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -10,12 +12,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * email:pettygadfly@gmail.com
  * doc:
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ConfigPerformance.class)
 public class Test {
 
-    @org.junit.Test
-    public void hello(){
-
+    public static void main(String[] args) {
+        //创建spring IOC容器
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aop_test_applicationContext.xml");
+        //从IOC容器中获取bean实例
+        Performance performance = (Performance) applicationContext.getBean(Performance.class);
+        performance.perform();
     }
 }

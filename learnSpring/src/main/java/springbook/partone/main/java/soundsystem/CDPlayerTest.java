@@ -21,8 +21,9 @@ public class CDPlayerTest {
     @Qualifier("sgtPeppers")
     private CompactDisc compactDisc;
 
-//    java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+    //    java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
 //    测试包版本不对
+    //测试不通过，可能是junit,springtext 包不应该provide,去掉jsp，servlet包
     @Test
     public void play() {
         System.out.println(compactDisc);

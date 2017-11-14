@@ -7,8 +7,8 @@ import io.netty.handler.codec.MessageToMessageEncoder;
 import io.netty.handler.codec.marshalling.DefaultMarshallerProvider;
 import io.netty.handler.codec.marshalling.MarshallerProvider;
 import io.netty.handler.codec.marshalling.MarshallingEncoder;
-import org.jboss.marshalling.Marshaller;
-import org.jboss.marshalling.MarshallerFactory;
+//import org.jboss.marshalling.Marshaller;
+//import org.jboss.marshalling.MarshallerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,7 @@ public class NettyMessageEncoder extends MessageToMessageEncoder {
     MarshallingEncoder marshallingEncoder;
 
     public NettyMessageEncoder() {
-        this.marshallingEncoder = MarshallingCodeCFactory.buildMarshallingEncoder();
+//        this.marshallingEncoder = MarshallingCodeCFactory.buildMarshallingEncoder();
     }
 
     @Override
