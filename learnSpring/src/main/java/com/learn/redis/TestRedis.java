@@ -1,22 +1,16 @@
 package com.learn.redis;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.junit.Test;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * author: 牛虻.
  * time:2017/11/11
  * email:pettygadfly@gmail.com
  * doc:
- *  超级详细
- *  http://blog.csdn.net/u013256816/article/details/51125842
+ * 超级详细
+ * http://blog.csdn.net/u013256816/article/details/51125842
  */
 @Service
 public class TestRedis {
@@ -24,13 +18,14 @@ public class TestRedis {
     public final static int port = 6379;
     public final static Jedis jedis = new Jedis(host, port, 1000);
 
+    public static Jedis getJedisInstance() {
+        return jedis;
+    }
 
     @Test
     public void addString() {
 
     }
-
-
 
 }
 

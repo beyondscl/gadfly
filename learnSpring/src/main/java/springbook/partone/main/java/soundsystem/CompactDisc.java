@@ -1,4 +1,4 @@
-package com.learn.partone.main.java.soundsystem;
+package springbook.partone.main.java.soundsystem;
 
 import java.util.Date;
 

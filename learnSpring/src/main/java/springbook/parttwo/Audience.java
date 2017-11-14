@@ -1,4 +1,4 @@
-package com.learn.parttwo;
+package springbook.parttwo;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

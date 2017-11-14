@@ -1,4 +1,4 @@
-package com.learn.parttwo;
+package springbook.parttwo;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

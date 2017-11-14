@@ -1,4 +1,4 @@
-package com.learn.parttwo;
+package springbook.parttwo;
 
 /**
  * author: 牛虻.

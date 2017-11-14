@@ -1,4 +1,4 @@
-package com.learn.parttwo;
+package springbook.parttwo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

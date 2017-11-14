@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * doc:
  */
 @Controller
+@RequestMapping("/user/*")
 public class UserCtl {
 
-    @RequestMapping("/user/jumpToMain")
+    @RequestMapping("jumpToMain")
     public String jump() {
         return "main";
     }
