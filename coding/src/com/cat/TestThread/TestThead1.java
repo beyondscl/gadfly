@@ -10,6 +10,9 @@ package com.cat.TestThread;
  * 3.sleep，设置优先级，让步等基本方法
  * 4.join[线程的强制执行]  T.join T执行完后，才会执行其后面的代码，相当于阻塞了。
  * 5thread.setDaemon(true)必须在thread.start(),主线程与垃圾回收都是守护现成，当只有这2个的时候就退出了。
+ *
+ * JAVA线程间通信的几种方式，阿里面试遇到
+ * http://blog.csdn.net/u011514810/article/details/77131296
  */
 public class TestThead1 extends Thread {
     int i = 0;

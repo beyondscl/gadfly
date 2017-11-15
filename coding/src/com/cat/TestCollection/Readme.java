@@ -17,7 +17,6 @@ package com.cat.TestCollection;
  * --IdentifyHashMap 建不可为空，同步安全，
  * --linkeddHashMap
  * --WeakHashMap
- * --hashTable
  * +quene [在高并发中有大量讲解]
  * +set key不重复，去重那么重写hashcode和equals
  * --hashSet
@@ -34,7 +33,7 @@ package com.cat.TestCollection;
  * =====================================================================================================================
  * 基本用法
  */
-public class Test3 {
+public class Readme {
     public static void main(String[] args) {
     }
 }
