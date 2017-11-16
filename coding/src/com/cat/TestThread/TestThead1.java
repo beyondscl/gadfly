@@ -4,15 +4,17 @@ package com.cat.TestThread;
  * Created by Administrator on 2017/10/25 0025.
  * 线程的基本用法：http://www.cnblogs.com/davidIsOK/p/3918096.html
  *
- * @doc :2种方式启动
- * 1.创建与启动,run也会执行不过是单个进程的阻塞。
- * 2.中断
- * 3.sleep，设置优先级，让步等基本方法
- * 4.join[线程的强制执行]  T.join T执行完后，才会执行其后面的代码，相当于阻塞了。
- * 5thread.setDaemon(true)必须在thread.start(),主线程与垃圾回收都是守护现成，当只有这2个的时候就退出了。
- *
- * JAVA线程间通信的几种方式，阿里面试遇到
- * http://blog.csdn.net/u011514810/article/details/77131296
+ * @doc :
+ *   实现线程的3中基本方式，
+ *     继承thread,
+ *     实现Runnable,
+ *     实现callable 等
+ * .五种状态，new创建，start就绪等待cpu调用，run运行，中断join,wait等，结束stop
+ * .start 与run的区别：状态上就有本质区别,run就是一个线程的基本方法，直接调用run，就相当于串行调用，会阻塞
+ * .sleep与wait的区别：sleep线程内休眠，不释放锁
+ * .sleep，setPriority,yield等基本方法
+ * .join[线程的强制执行]  T.join T执行完后，才会执行其后面的代码，相当于阻塞了。
+ * .thread.setDaemon(true)必须在thread.start(),主线程与垃圾回收都是守护现成，当只有这2个的时候就退出了。
  */
 public class TestThead1 extends Thread {
     int i = 0;
