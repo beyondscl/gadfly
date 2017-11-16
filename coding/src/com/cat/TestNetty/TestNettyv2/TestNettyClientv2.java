@@ -67,8 +67,8 @@ class ChildChannelHandlerC1 extends ChannelInitializer {
 //书上:不应该继承 ChannelHandlerAdapter,SimpleChannelInboundHandler客户端会释放bytebuf
 class Client1 extends SimpleChannelInboundHandler {
     private static final Logger log = Logger.getLogger(Client1.class.getName());
-    private int counter = 0;
     byte[] req = ("你好" + System.getProperty("line.separator") + "@_").getBytes();
+    private int counter = 0;
 
     public Client1() {
         log.info("Client1 start" + new Date());

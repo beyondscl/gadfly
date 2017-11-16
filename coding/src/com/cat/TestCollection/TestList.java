@@ -35,7 +35,7 @@ public class TestList {
      * <p/>
      * 优化：防止动态扩容，若提前能大致判断list的长度，调用ensureCapacity调整容量，将有效的提高运行速度
      * 底层数组操作，system.arrayCopy调用的c
-     *
+     * <p>
      * 遍历方式，随机访问[推荐]，迭代器
      */
     public void arrayListTest() {
@@ -50,7 +50,7 @@ public class TestList {
      * 使用内部类实现了双向链表
      * 所以随机访问肯定慢，但是删除添加很快，因为不需要复制数组
      * 比如获取inex=6,先中间判断在循环，减少一半的循环
-     *
+     * <p>
      * 遍历方式，for ,迭代器
      */
     public void linkedListTest() {
@@ -65,7 +65,7 @@ public class TestList {
      * 遍历方式4种，随机访问[推荐]，迭代器，for in ,Enumeration
      * 不推荐使用了
      */
-    public void vectorTest(){
+    public void vectorTest() {
         Vector vector = new Vector();
         vector.elements(); // ->Enumeration
     }
@@ -78,7 +78,7 @@ public class TestList {
      * 推荐使用Deque 接口及其实现提供了LIFO 堆栈操作的更完整和更一致的 set，应该优先使用此 set，而非此类。权当了解！
      * 添加了2个同步方法而已pop删除并返回,peek仅仅返回
      */
-    public void stackTest(){
+    public void stackTest() {
         Stack stack = new Stack();
     }
 }

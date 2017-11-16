@@ -5,7 +5,7 @@ package com.cat.TestSkill;
  * time:2017/11/15
  * email:pettygadfly@gmail.com
  * doc:
- *     equals空指针异常问题
+ * equals空指针异常问题
  */
 public class Test4 {
     public static void main(String[] args) {

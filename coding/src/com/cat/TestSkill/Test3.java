@@ -2,7 +2,7 @@ package com.cat.TestSkill;
 
 /**
  * author: 牛虻.
-<<<<<<< Updated upstream
+ * <<<<<<< Updated upstream
  * time:2017/11/14
  * email:pettygadfly@gmail.com
  * doc:

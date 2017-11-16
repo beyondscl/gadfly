@@ -23,7 +23,7 @@ cc.Class({
         silver: 0,//白银
         level: 0,
 
-        status:0,//状态-> 占座位：0准备，1站立；不占座位-> 2围观
+        status: 0,//状态-> 占座位：0准备，1站立；不占座位-> 2围观
         loginType: 0,
 
         myReceSeat: {

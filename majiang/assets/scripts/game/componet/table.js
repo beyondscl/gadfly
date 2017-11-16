@@ -48,7 +48,7 @@ cc.Class({
             default: [],
             type: cc.Node
         },
-        animalCardTab:{
+        animalCardTab: {
             default: null,
             type: cc.Node
         }

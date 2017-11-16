@@ -7,5 +7,5 @@ package springbook.parttwo;
  * doc:
  */
 public interface Performance {
-    void  perform();
+    void perform();
 }

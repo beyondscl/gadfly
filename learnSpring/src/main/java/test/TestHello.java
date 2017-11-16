@@ -1,7 +1,6 @@
 package test;
 
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +15,7 @@ import java.util.Calendar;
 public class TestHello {
 
     @Test
-    public  void sayHello(){
+    public void sayHello() {
         System.out.println(Calendar.getInstance().getTime());
         Assert.assertNotNull(null);
     }

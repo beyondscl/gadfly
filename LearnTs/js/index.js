@@ -8,9 +8,14 @@
  */
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
+
+    function __() {
+        this.constructor = d;
+    }
+
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+
 /**
  * 实例
  * 实例属性[boolean|string|number]
@@ -22,7 +27,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 function numAdd(left, right) {
     return left + right;
 }
+
 console.log(numAdd(1, 2));
+
 /**
  * 使用接口 shape:Shape
  * @param shape
@@ -33,6 +40,7 @@ function area(shape) {
     }
     return 0;
 }
+
 //初始化接口，参数必须全部填上
 var square = {
     name: "square",
@@ -83,6 +91,7 @@ var TestClass1 = (function () {
         this.name = name;
         this.age = age;
     }
+
     //方法,不写就默认转
     TestClass1.prototype.sayHello = function () {
         return "hello:" + this.age + ":" + this.name;
@@ -95,10 +104,12 @@ console.log(new TestClass1("beyond", 11).sayHello());
  */
 var TestClass2 = (function (_super) {
     __extends(TestClass2, _super);
+
     function TestClass2(name, age, location) {
         _super.call(this, name, age);
         this.location = location;
     }
+
     TestClass2.prototype.sayHello = function () {
         return _super.prototype.sayHello.call(this) + ":location=" + this.location;
     };

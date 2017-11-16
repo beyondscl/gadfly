@@ -4,15 +4,16 @@ let path = require("path");
 let self = module.exports = {
     getDirAllFiles(dirPath, result) {
         let files = fs.readdirSync(dirPath);
-        files.forEach((val, index) => {
+        files.forEach((val, index) = > {
             let fPath = path.join(dirPath, val);
-            let stats = fs.statSync(fPath);
-            if (stats.isDirectory()) {
-                this.getDirAllFiles(fPath, result);
-            } else if (stats.isFile()) {
-                result.push(fPath);
-            }
-        });
+        let stats = fs.statSync(fPath);
+        if (stats.isDirectory()) {
+            this.getDirAllFiles(fPath, result);
+        } else if (stats.isFile()) {
+            result.push(fPath);
+        }
+    })
+        ;
     },
     getFileString(fileList, options) {
         let curIndex = 0;

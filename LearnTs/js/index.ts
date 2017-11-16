@@ -15,29 +15,32 @@
  * @returns {number} 返回值类型
  * @constructor
  */
-function numAdd(left:number, right:number):number {
+function numAdd(left: number, right: number): number {
     return left + right;
 }
+
 console.log(numAdd(1, 2));
 
 /**
  * 接口
  */
 interface Shape {
-    name:string;
-    width:number;
-    height:number;
+    name: string;
+    width: number;
+    height: number;
 }
+
 /**
  * 使用接口 shape:Shape
  * @param shape
  */
-function area(shape:Shape):number {
+function area(shape: Shape): number {
     if (shape.name === "square") {
         return shape.width * shape.height;
     }
     return 0;
 }
+
 //初始化接口，参数必须全部填上
 let square = {
     name: "square",
@@ -85,35 +88,40 @@ shape1.popup();
  * 定义类
  */
 class TestClass1 {
-    name:string;
-    age:number;
+    name: string;
+    age: number;
+
     //构造函数
-    constructor(name:string, age:number) {
+    constructor(name: string, age: number) {
         this.name = name;
         this.age = age;
     }
 
     //方法,不写就默认转
-    sayHello():string {
+    sayHello(): string {
         return "hello:" + this.age + ":" + this.name;
     }
 }
+
 console.log(new TestClass1("beyond", 11).sayHello());
 
 /**
  * 类继承
  */
 class TestClass2 extends TestClass1 {
-    location:string;
-    constructor(name:string, age:number,location:string) {
-        super(name,age);
-        this.location =location;
+    location: string;
+
+    constructor(name: string, age: number, location: string) {
+        super(name, age);
+        this.location = location;
     }
-    sayHello():string {
-        return super.sayHello()+":location="+this.location;
+
+    sayHello(): string {
+        return super.sayHello() + ":location=" + this.location;
     }
 }
-console.log(new TestClass2("aaa",111,"hz").sayHello());
+
+console.log(new TestClass2("aaa", 111, "hz").sayHello());
 
 
 

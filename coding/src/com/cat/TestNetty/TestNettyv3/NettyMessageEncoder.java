@@ -4,14 +4,13 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
-import io.netty.handler.codec.marshalling.DefaultMarshallerProvider;
-import io.netty.handler.codec.marshalling.MarshallerProvider;
 import io.netty.handler.codec.marshalling.MarshallingEncoder;
-//import org.jboss.marshalling.Marshaller;
-//import org.jboss.marshalling.MarshallerFactory;
 
 import java.util.List;
 import java.util.Map;
+
+//import org.jboss.marshalling.Marshaller;
+//import org.jboss.marshalling.MarshallerFactory;
 
 /**
  * author: 牛虻.
@@ -43,13 +42,13 @@ public class NettyMessageEncoder extends MessageToMessageEncoder {
         String key = null;
         byte[] keyArray = null;
         Object value = null;
-        for(Map.Entry<String ,Object> param : nm.getHeader().getAttachment().entrySet()){
+        for (Map.Entry<String, Object> param : nm.getHeader().getAttachment().entrySet()) {
 
         }
         key = null;
         keyArray = null;
         value = null;
-        if(nm.getBody()!=null){
+        if (nm.getBody() != null) {
         }
     }
 }

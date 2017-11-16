@@ -365,7 +365,8 @@ Editor.Panel.extend({
                         if (!stat.isDirectory()) {
                             return;
                         }
-                        let subpaths = fs.readdirSync(dir), subpath, size, md5, compressed, relative;
+                        let subpaths = fs.readdirSync(dir), subpath, size, md5,
+                            compressed, relative;
                         for (let i = 0; i < subpaths.length; ++i) {
                             if (subpaths[i][0] === '.') {
                                 continue;

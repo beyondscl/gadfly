@@ -1,3 +1,3 @@
-module.exports={
-    title:'hotUpdateTools',
+module.exports = {
+    title: 'hotUpdateTools',
 };

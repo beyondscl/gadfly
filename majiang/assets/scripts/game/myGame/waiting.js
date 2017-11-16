@@ -4,7 +4,7 @@
 cc.Class({
     extends: cc.Component,
     properties: {
-        target:cc.Node,
+        target: cc.Node,
         // foo: {
         //    default: null,
         //    url: cc.Texture2D,  // optional, default is typeof default
@@ -27,27 +27,27 @@ cc.Class({
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
-        this.target.rotation = this.target.rotation - 3*dt*45;
+        this.target.rotation = this.target.rotation - 3 * dt * 45;
     },
 
-    show:function(content){
+    show: function (content) {
         this.isShow = true;
-        if(this.node){
+        if (this.node) {
             this.node.active = this.isShow;
         }
-        if(this.title){
-            if(content == null){
+        if (this.title) {
+            if (content == null) {
                 content = "请耐心等待";
             }
             this.title.string = content;
         }
-        if(this.isMask){
+        if (this.isMask) {
             this.mask.active = true;
         }
     },
-    hide:function(){
+    hide: function () {
         this.isShow = false;
-        if(this.node){
+        if (this.node) {
             this.node.active = this.isShow;
         }
     }

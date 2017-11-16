@@ -4,6 +4,40 @@
 package com.monkey.outjava;
 
 public final class Person {
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_person_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_person_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
+
+    static {
+        java.lang.String[] descriptorData = {
+                "\n\014person.proto\"3\n\006person\022\r\n\005query\030\001 \001(\t\022" +
+                        "\013\n\003age\030\002 \001(\005\022\r\n\005money\030\003 \001(\001B\034\n\022com.monke" +
+                        "y.outjavaB\006Personb\006proto3"
+        };
+        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                            com.google.protobuf.Descriptors.FileDescriptor root) {
+                        descriptor = root;
+                        return null;
+                    }
+                };
+        com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        }, assigner);
+        internal_static_person_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_person_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_person_descriptor,
+                new java.lang.String[]{"Query", "Age", "Money",});
+    }
+
     private Person() {
     }
 
@@ -15,6 +49,11 @@ public final class Person {
             com.google.protobuf.ExtensionRegistry registry) {
         registerAllExtensions(
                 (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
     }
 
     public interface personOrBuilder extends
@@ -58,23 +97,39 @@ public final class Person {
             com.google.protobuf.GeneratedMessageV3 implements
             // @@protoc_insertion_point(message_implements:person)
             personOrBuilder {
+        public static final int QUERY_FIELD_NUMBER = 1;
+        public static final int AGE_FIELD_NUMBER = 2;
+        public static final int MONEY_FIELD_NUMBER = 3;
         private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:person)
+        private static final com.monkey.outjava.Person.person DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<person>
+                PARSER = new com.google.protobuf.AbstractParser<person>() {
+            public person parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new person(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.monkey.outjava.Person.person();
+        }
+
+        private volatile java.lang.Object query_;
+        private int age_;
+        private double money_;
+        private byte memoizedIsInitialized = -1;
 
         // Use person.newBuilder() to construct.
         private person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
         }
-
         private person() {
             query_ = "";
             age_ = 0;
             money_ = 0D;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
         }
 
         private person(
@@ -134,15 +189,115 @@ public final class Person {
             return com.monkey.outjava.Person.internal_static_person_descriptor;
         }
 
+        public static com.monkey.outjava.Person.person parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.monkey.outjava.Person.person parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.monkey.outjava.Person.person parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.monkey.outjava.Person.person parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.monkey.outjava.Person.person prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.monkey.outjava.Person.person getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<person> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
             return com.monkey.outjava.Person.internal_static_person_fieldAccessorTable
                     .ensureFieldAccessorsInitialized(
                             com.monkey.outjava.Person.person.class, com.monkey.outjava.Person.person.Builder.class);
         }
-
-        public static final int QUERY_FIELD_NUMBER = 1;
-        private volatile java.lang.Object query_;
 
         /**
          * <pre>
@@ -185,9 +340,6 @@ public final class Person {
             }
         }
 
-        public static final int AGE_FIELD_NUMBER = 2;
-        private int age_;
-
         /**
          * <code>int32 age = 2;</code>
          */
@@ -195,17 +347,12 @@ public final class Person {
             return age_;
         }
 
-        public static final int MONEY_FIELD_NUMBER = 3;
-        private double money_;
-
         /**
          * <code>double money = 3;</code>
          */
         public double getMoney() {
             return money_;
         }
-
-        private byte memoizedIsInitialized = -1;
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
@@ -293,97 +440,8 @@ public final class Person {
             return hash;
         }
 
-        public static com.monkey.outjava.Person.person parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.monkey.outjava.Person.person parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.monkey.outjava.Person.person parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.monkey.outjava.Person.person parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
         public Builder newBuilderForType() {
             return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.monkey.outjava.Person.person prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
 
         public Builder toBuilder() {
@@ -398,6 +456,15 @@ public final class Person {
             return builder;
         }
 
+        @java.lang.Override
+        public com.google.protobuf.Parser<person> getParserForType() {
+            return PARSER;
+        }
+
+        public com.monkey.outjava.Person.person getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
         /**
          * Protobuf type {@code person}
          */
@@ -405,17 +472,9 @@ public final class Person {
                 com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
                 // @@protoc_insertion_point(builder_implements:person)
                 com.monkey.outjava.Person.personOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.monkey.outjava.Person.internal_static_person_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.monkey.outjava.Person.internal_static_person_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.monkey.outjava.Person.person.class, com.monkey.outjava.Person.person.Builder.class);
-            }
+            private java.lang.Object query_ = "";
+            private int age_;
+            private double money_;
 
             // Construct using com.monkey.outjava.Person.person.newBuilder()
             private Builder() {
@@ -426,6 +485,18 @@ public final class Person {
                     com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.monkey.outjava.Person.internal_static_person_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.monkey.outjava.Person.internal_static_person_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.monkey.outjava.Person.person.class, com.monkey.outjava.Person.person.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -552,8 +623,6 @@ public final class Person {
                 return this;
             }
 
-            private java.lang.Object query_ = "";
-
             /**
              * <pre>
              * 类型，字段，长度
@@ -572,6 +641,24 @@ public final class Person {
                 } else {
                     return (java.lang.String) ref;
                 }
+            }
+
+            /**
+             * <pre>
+             * 类型，字段，长度
+             * </pre>
+             * <p/>
+             * <code>string query = 1;</code>
+             */
+            public Builder setQuery(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                query_ = value;
+                onChanged();
+                return this;
             }
 
             /**
@@ -602,11 +689,12 @@ public final class Person {
              * <p/>
              * <code>string query = 1;</code>
              */
-            public Builder setQuery(
-                    java.lang.String value) {
+            public Builder setQueryBytes(
+                    com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
+                checkByteStringIsUtf8(value);
 
                 query_ = value;
                 onChanged();
@@ -626,27 +714,6 @@ public final class Person {
                 onChanged();
                 return this;
             }
-
-            /**
-             * <pre>
-             * 类型，字段，长度
-             * </pre>
-             * <p/>
-             * <code>string query = 1;</code>
-             */
-            public Builder setQueryBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                query_ = value;
-                onChanged();
-                return this;
-            }
-
-            private int age_;
 
             /**
              * <code>int32 age = 2;</code>
@@ -674,8 +741,6 @@ public final class Person {
                 onChanged();
                 return this;
             }
-
-            private double money_;
 
             /**
              * <code>double money = 3;</code>
@@ -718,80 +783,6 @@ public final class Person {
             // @@protoc_insertion_point(builder_scope:person)
         }
 
-        // @@protoc_insertion_point(class_scope:person)
-        private static final com.monkey.outjava.Person.person DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE = new com.monkey.outjava.Person.person();
-        }
-
-        public static com.monkey.outjava.Person.person getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<person>
-                PARSER = new com.google.protobuf.AbstractParser<person>() {
-            public person parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new person(input, extensionRegistry);
-            }
-        };
-
-        public static com.google.protobuf.Parser<person> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<person> getParserForType() {
-            return PARSER;
-        }
-
-        public com.monkey.outjava.Person.person getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-    }
-
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_person_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_person_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
-
-    static {
-        java.lang.String[] descriptorData = {
-                "\n\014person.proto\"3\n\006person\022\r\n\005query\030\001 \001(\t\022" +
-                        "\013\n\003age\030\002 \001(\005\022\r\n\005money\030\003 \001(\001B\034\n\022com.monke" +
-                        "y.outjavaB\006Personb\006proto3"
-        };
-        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                            com.google.protobuf.Descriptors.FileDescriptor root) {
-                        descriptor = root;
-                        return null;
-                    }
-                };
-        com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        }, assigner);
-        internal_static_person_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_person_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_person_descriptor,
-                new java.lang.String[]{"Query", "Age", "Money",});
     }
 
     // @@protoc_insertion_point(outer_class_scope)

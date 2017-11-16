@@ -5,5 +5,5 @@ import java.util.Date;
 public interface CompactDisc {
     void play();
 
-    void baibai(String name , Date date);
+    void baibai(String name, Date date);
 }

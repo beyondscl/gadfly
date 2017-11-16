@@ -14,6 +14,10 @@ public class Producter implements Serializable {
     private String time;
     private String name;
 
+    public static void main(String[] args) {
+        System.out.println(new Producter().getName());
+    }
+
     public String getOrderId() {
         return orderId;
     }
@@ -36,9 +40,5 @@ public class Producter implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Producter().getName());
     }
 }

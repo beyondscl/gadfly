@@ -5,10 +5,10 @@ package com.cat.TestThread;
  * 线程的基本用法：http://www.cnblogs.com/davidIsOK/p/3918096.html
  *
  * @doc :
- *   实现线程的3中基本方式，
- *     继承thread,
- *     实现Runnable,
- *     实现callable 等
+ * 实现线程的3中基本方式，
+ * 继承thread,
+ * 实现Runnable,
+ * 实现callable 等
  * .五种状态，new创建，start就绪等待cpu调用，run运行，中断join,wait等，结束stop
  * .start 与run的区别：状态上就有本质区别,run就是一个线程的基本方法，直接调用run，就相当于串行调用，会阻塞
  * .sleep与wait的区别：sleep线程内休眠，不释放锁

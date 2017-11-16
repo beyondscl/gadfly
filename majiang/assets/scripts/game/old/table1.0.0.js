@@ -259,8 +259,8 @@ cc.Class({
         showChuPaiNode.getComponent(cc.Sprite).spriteFrame = cNode.getComponent(cc.Sprite).spriteFrame;
         showChuPaiNode.active = true;
         //显示当前出的牌，需要判断坐标
-        this.cardTab.x = showChuPaiNode.x+showChuPaiNode.width/2;
-        this.cardTab.y = showChuPaiNode.y+showChuPaiNode.height-5;
+        this.cardTab.x = showChuPaiNode.x + showChuPaiNode.width / 2;
+        this.cardTab.y = showChuPaiNode.y + showChuPaiNode.height - 5;
         this.cardTab.active = true;
         this.sortCards("SORT_1", this.getNodeDetail(cNode).cNode, seatCards.seatb[13].cNode, seatCards.seatb);
     },
