@@ -13,3 +13,16 @@ methodB(){
 }
 ```
 3.缓存击穿 `高并发中涉及到 ，双重锁检验`
+
+4.为什么要重写hashcode
+```
+就是为了比较对象：
+object 默认调用的是 == 
+public boolean equals(Object obj) {  
+    return (this == obj);  
+}  
+
+对象相等，equals相等，hashcode相等
+equals不相等，hashcode可能相等
+```
+5.算法复杂度？
