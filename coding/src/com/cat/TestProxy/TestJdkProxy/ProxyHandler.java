@@ -1,4 +1,4 @@
-package com.cat.TestProxy;
+package com.cat.TestProxy.TestJdkProxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
