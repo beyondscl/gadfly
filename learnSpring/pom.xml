@@ -61,6 +61,13 @@
             <version>${springframework.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+
         <!-- jstl,standard.jar -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -140,7 +147,6 @@
             <artifactId>dubbo</artifactId>
             <version>2.5.7</version>
         </dependency>
-
 
 
     </dependencies>
