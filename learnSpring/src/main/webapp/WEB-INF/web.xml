@@ -49,8 +49,11 @@
     在ContextLoaderListener中关联了ContextLoader这个类，所以整个加载配置过程由ContextLoader来完成。-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:applicationContext.xml</param-value>
+        <param-value>
+            classpath*:applicationContext.xml,classpath*:dubbo-provider.xml
+        </param-value>
     </context-param>
+
 
     <!--如果你的DispatcherServlet拦截"/"，为了实现REST风格，拦截了所有的请求，那么同时对*.js,*.jpg等静态文件的访问也就被拦截了。-->
     <!--方案一：激活Tomcat的defaultServlet来处理静态文件-->
