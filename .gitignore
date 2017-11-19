@@ -2,4 +2,5 @@
 *.iml
 *.class
 *.war
-/out
+target/
+out/
