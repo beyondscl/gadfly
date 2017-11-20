@@ -1,6 +1,5 @@
 package com.learn.domain;
 
-import com.sun.istack.internal.NotNull;
 
 /**
  * author: 牛虻.
@@ -33,7 +32,6 @@ public class User {
         this.age = age;
     }
 
-    @NotNull
     private String uid ;
     private String name ;
     private int age ;
