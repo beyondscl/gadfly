@@ -10,6 +10,7 @@ import java.util.Vector;
  * time:2017/11/15 0015
  * email:pettygadfly@gmail.com
  * doc:
+ * java.util.connection
  * 实现了RandmoAccess接口，即提供了随机访问功能。
  * RandmoAccess是java中用来被List实现，为List提供快速访问功能的。
  * 通过元素的序号快速获取元素对象；这就是快速随机访问。
