@@ -1,8 +1,8 @@
 package com.cat.TestCollection;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.WeakHashMap;
 
 /**

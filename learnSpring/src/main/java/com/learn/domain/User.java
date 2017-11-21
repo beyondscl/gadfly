@@ -8,12 +8,12 @@ package com.learn.domain;
  * doc:
  */
 public class User {
-    public String getUid() {
-        return uid;
+    public String getId() {
+        return id;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -32,7 +32,7 @@ public class User {
         this.age = age;
     }
 
-    private String uid ;
+    private String id;
     private String name ;
     private int age ;
 }

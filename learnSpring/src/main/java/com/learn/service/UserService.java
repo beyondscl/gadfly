@@ -1,9 +1,9 @@
 package com.learn.service;
 
-import com.learn.dao.UserDao;
+import com.learn.domain.User;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * author: 牛虻.
@@ -12,11 +12,14 @@ import javax.annotation.Resource;
  * doc:
  */
 @Service
-public class UserService {
-    @Resource
-    private UserDao userDao;
+public interface UserService {
 
-    public int addUser() {
-        return userDao.addUser();
-    }
+    public User getUser(User user);
+
+    public List<User> getAllUser();
+
+    public void test();
+
+    public void addUser(User user);
+
 }

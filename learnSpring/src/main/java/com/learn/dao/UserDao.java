@@ -1,9 +1,9 @@
 package com.learn.dao;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.learn.domain.User;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * author: 牛虻.
@@ -12,15 +12,10 @@ import javax.annotation.Resource;
  * doc:
  */
 @Repository
-public class UserDao {
+public interface UserDao {
+    public User getUser(User user);
 
-    @Resource
-    private JdbcTemplate jdbcTemplate;
+    public List<User> getAllUser();
 
-    public int addUser() {
-        String sql = "insert into sys_user values(2,'test','test')";
-        sql = "select * from sys_user";
-        jdbcTemplate.execute(sql);
-        return 1;
-    }
+    public void addUser(User user);
 }

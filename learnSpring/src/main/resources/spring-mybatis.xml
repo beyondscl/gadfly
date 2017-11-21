@@ -14,22 +14,25 @@
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 
+    <!--参数错误，请仔细检查
+    Can not read response from server. Expected to read 4 bytes,
+    read 0 bytes before connection was unexpectedly lost.-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
-        <property name="driverClassName" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/world"/>
+        <property name="username" value="root"/>
+        <property name="password" value="mysql"/>
         <!-- 初始化连接大小 -->
-        <property name="initialSize" value="${initialSize}"></property>
+        <property name="initialSize" value="5"/>
         <!-- 连接池最大数量 -->
-        <property name="maxActive" value="${maxActive}"></property>
+        <property name="maxActive" value="20"/>
         <!-- 连接池最大空闲 -->
-        <property name="maxIdle" value="${maxIdle}"></property>
+        <property name="maxIdle" value="2"/>
         <!-- 连接池最小空闲 -->
-        <property name="minIdle" value="${minIdle}"></property>
+        <property name="minIdle" value="1"/>
         <!-- 获取连接最大等待时间 -->
-        <property name="maxWait" value="${maxWait}"></property>
+        <property name="maxWait" value="10000"/>
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
@@ -43,7 +46,7 @@
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.cn.hnust.dao"/>
+        <property name="basePackage" value="com.learn.dao"/>
         <property name="sqlSessionFactoryBeanName"
                   value="sqlSessionFactory"></property>
     </bean>
