@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.Vector;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * author: 牛虻.
@@ -23,7 +24,7 @@ import java.util.Vector;
  */
 public class TestList {
     public static void main(String[] args) {
-
+        new TestList().arrayListTest();
     }
 
     /**
@@ -40,7 +41,17 @@ public class TestList {
      * 遍历方式，随机访问[推荐]，迭代器
      */
     public void arrayListTest() {
-        ArrayList arrayList = new ArrayList();
+        //请简单描述：增加一个对象需要经过哪些步骤？
+        //1.不指定位置，加载末尾
+        //2.指定位置:超过报错；否则，向后面移动位置，然后对该位置赋值
+        //system.arraycopy ,copyof ,浅拷贝
+        ArrayList arrayList = new ArrayList(20);
+        arrayList.add(0, 1);//
+        arrayList.add(0, 1);
+        int i = 0;
+        System.out.println(i++); //0
+        i = 0;
+        System.out.println(++i); //1
     }
 
     /**

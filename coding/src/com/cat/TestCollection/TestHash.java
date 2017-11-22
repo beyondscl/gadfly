@@ -120,7 +120,7 @@ public class TestHash {
      * </p>
      * <p>
      * 【核心分析put方法】
-     * hashmap put()三种情况
+     * hashmap put()三种情况(判断是否需要新加桶，重新计算hash等)
      * 1：key hashcode不同，add
      * 2：key hashcode存在，但是equals相同，更新
      * 2：key hashcode存在，但是equals不同，更新，单链表
@@ -148,6 +148,9 @@ public class TestHash {
      */
     public void TestHashMap() {
         HashMap hashMap = new HashMap(16, 0.6f);
+        hashMap.put("aaa","aaa");
+        hashMap.put("aaa","aaa");
+        hashMap.put("aaa","aaa");
         System.out.println(hashMap.size());
     }
 
