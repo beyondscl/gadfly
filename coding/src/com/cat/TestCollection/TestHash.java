@@ -22,7 +22,7 @@ import java.util.WeakHashMap;
  * 弱引用，没有关联的时候自动回收
  * 虚引用， 忘记了
  * <p>
- * 你知道hash*中推荐用string做key吗？ ->请看TestString文件，因为它重写了hashcode等等
+ * 你知道hash*中推荐用string做key吗？ ->请看TestString文件，因为它是final,重写了hashcode等等
  * <p>
  * Java提供的位运算符有：
  * 左移( << )、右移( >> ) 、无符号右移( >>> ) 、

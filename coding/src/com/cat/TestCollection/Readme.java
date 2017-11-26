@@ -11,6 +11,7 @@ package com.cat.TestCollection;
  * --arrayLisst 数组实现，单向链表
  * --vector 数组实现，同步,一般不用；用Collections配合使用获得同步的数据
  * --Stack 数组实现，同步，add()-> boolen和push() ->Object ;peek() ->获得不删除和pop()获得并删除
+ * 下面是不是集合
  * +map 建不重复；优化，key简洁，大小最好固定扩容麻烦
  * --hashMap   建可为空，多线程ConcurrentHashMap安全
  * --hashTable 建不可为空，同步安全，

@@ -32,7 +32,7 @@ public class TestList {
      * 一个方法一个方法分析
      * http://blog.csdn.net/jzhf2012/article/details/8540410
      * 被标记为：transient Object[] a
-     * 动态数组实现(数组内存连续)，默认值10，默认扩容X*1.5+1，不安全
+     * 动态数组实现(数组内存连续)，默认值10，默认扩容X*1.5+1，相当于增加0.5倍+1不安全
      * 它继承自AbstractList，实现了List、RandomAccess、Cloneable、java.io.Serializable接口
      * <p/>
      * 优化：防止动态扩容，若提前能大致判断list的长度，调用ensureCapacity调整容量，将有效的提高运行速度
@@ -61,7 +61,7 @@ public class TestList {
      * 不安全
      * 使用内部类实现了双向链表
      * 所以随机访问肯定慢，但是删除添加很快，因为不需要复制数组
-     * 比如获取inex=6,先中间判断在循环，减少一半的循环
+     * 比如获取index=6,先中间判断在循环，减少一半的循环
      * <p>
      * 遍历方式，for ,迭代器
      */
