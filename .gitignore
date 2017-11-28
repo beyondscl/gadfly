@@ -1,6 +1,8 @@
+.gitignore
 *.idea
 *.iml
 *.class
 *.war
 target/
 out/
+*.*/classes/.*
