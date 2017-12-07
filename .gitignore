@@ -6,3 +6,8 @@
 target/
 out/
 *.*/classes/.*
+coding/src/com/monkey/outjava/com/
+coding/web/WEB-INF/classes/
+learnSpring/target/
+majiang/assets/scripts/game/ui/
+learnSpring/src/main/java/com/learn/module/
