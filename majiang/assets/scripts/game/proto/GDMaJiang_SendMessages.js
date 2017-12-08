@@ -18,50 +18,44 @@ var GDMJ_Send_define = {
 
 var GDMJ_Send_Struct = {
     //出牌命令
-    CMD_C_OutCard:
-        {
-            sum_len: 1,
-            cbCardData: 'byte'							//扑克数据
-        },
+    CMD_C_OutCard: {
+        sum_len: 1,
+        cbCardData: 'byte'							//扑克数据
+    },
 
     //操作命令
-    CMD_C_OperateCard:
-        {
-            sum_len: 1 + 1,
-            cbOperateCode: 'byte',						//操作代码
-            cbOperateCard: 'byte'						    //操作扑克
-        },
+    CMD_C_OperateCard: {
+        sum_len: 1 + 1,
+        cbOperateCode: 'byte',						//操作代码
+        cbOperateCard: 'byte'						    //操作扑克
+    },
 
     //用户托管
-    CMD_C_Trustee:
-        {
-            sum_len: 1,
-            bTrustee: 'byte'							//是否托管
-        },
+    CMD_C_Trustee: {
+        sum_len: 1,
+        bTrustee: 'byte'							//是否托管
+    },
 
     //起手小胡
-    CMD_C_XiaoHu:
-        {
-            sum_len: 1 + 1,
-            cbOperateCode: 'byte',						//操作代码
-            cbOperateCard: 'byte'						    //操作扑克
-        },
+    CMD_C_XiaoHu: {
+        sum_len: 1 + 1,
+        cbOperateCode: 'byte',						//操作代码
+        cbOperateCard: 'byte'						    //操作扑克
+    },
     //用户表情
-    CMD_GR_C_UserExpression:
-        {
-            sum_len: 2 + 4,
-            wItemIndex: 'tchar',						//表情索引
-            dwTargetUserID: 'int'						    //目标用户
-        },
+    CMD_GR_C_UserExpression: {
+        sum_len: 2 + 4,
+        wItemIndex: 'tchar',						//表情索引
+        dwTargetUserID: 'int'						    //目标用户
+    },
     //用户聊天
-    CMD_GR_C_UserChat:
-        {
-            sum_len: 2 + 4 + 4 + 2 * Define.LEN_USER_CHAT,
-            wChatLength: 'word',						//信息长度
-            dwChatColor: 'int',						    //信息颜色
-            dwTargetUserID: 'int',					        //目标用户
-            szChatString: 'tchar&' + Define.LEN_USER_CHAT		    //聊天信息
-        }
+    CMD_GR_C_UserChat: {
+        sum_len: 2 + 4 + 4 + 2 * Define.LEN_USER_CHAT,
+        wChatLength: 'word',						//信息长度
+        dwChatColor: 'int',						    //信息颜色
+        dwTargetUserID: 'int',					        //目标用户
+        szChatString: 'tchar&' + Define.LEN_USER_CHAT		    //聊天信息
+    }
 };
 
 

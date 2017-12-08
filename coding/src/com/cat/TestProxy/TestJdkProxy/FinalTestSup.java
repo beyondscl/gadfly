@@ -8,11 +8,12 @@ package com.cat.TestProxy.TestJdkProxy;
  */
 public class FinalTestSup {
 
-    public final  String say(){
+    public final String say() {
         return "";
     }
 }
-class saySun extends  FinalTestSup{
+
+class saySun extends FinalTestSup {
 
 //    @Override
 //    public String say() {

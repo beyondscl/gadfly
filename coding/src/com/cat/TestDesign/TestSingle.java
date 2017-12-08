@@ -56,8 +56,8 @@ public class TestSingle extends TestSingleSuper {
 
 class TestSingleSuper {
 
-    protected String name = "hello~";
     static String age = "22~";
+    protected String name = "hello~";
 
     //不允许出现this
     protected static String sayHello() {

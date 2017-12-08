@@ -120,8 +120,8 @@ let self = module.exports = {
         rmEmptyDir(rootFile);
     },
     /*
-        is_fileType($('#uploadfile').val(), 'doc,pdf,txt,wps,odf,md,png,gif,jpg')
-    * */
+     is_fileType($('#uploadfile').val(), 'doc,pdf,txt,wps,odf,md,png,gif,jpg')
+     * */
     is_fileType(filename, types) {
         types = types.split(',');
         let pattern = '\.(';

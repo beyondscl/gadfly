@@ -50,9 +50,9 @@ public class TestSignleLink {
  * 模拟节点
  */
 class Node {
+    public Node next;
     private String name;
     private int age;
-    public Node next;
 
     public Node(String name, int age) {
         this.age = age;

@@ -231,30 +231,30 @@ Editor.Panel.extend({
                         }.bind(this))
                     }.bind(this));
                     /*
-                    Editor.assetdb.deepQuery(function (err, results) {
-                        results.forEach(function (result) {
-                            if (result.type !== "folder" &&
-                                result.type !== "texture" &&
-                                result.type !== "sprite-frame" &&
-                                result.type !== "javascript" &&
-                                result.type !== "dragonbones-atlas" &&
-                                result.type !== "prefab" &&
-                                result.type !== "audio-clip" &&
-                                result.type !== "animation-clip" &&
-                                result.type !== "scene" &&
-                                result.type !== "dragonbones" &&
-                                result.type !== "particle" &&
-                                result.type !== "label-atlas" &&
-                                result.type !== "text" &&
-                                result.type !== "" &&
-                                result.type !== ""
-                            ) {
-                                let fullName = result.name + result.extname;
-                                console.log(result.type + " : " + fullName);
-                            }
-                        });
-                    });
-                    */
+                     Editor.assetdb.deepQuery(function (err, results) {
+                     results.forEach(function (result) {
+                     if (result.type !== "folder" &&
+                     result.type !== "texture" &&
+                     result.type !== "sprite-frame" &&
+                     result.type !== "javascript" &&
+                     result.type !== "dragonbones-atlas" &&
+                     result.type !== "prefab" &&
+                     result.type !== "audio-clip" &&
+                     result.type !== "animation-clip" &&
+                     result.type !== "scene" &&
+                     result.type !== "dragonbones" &&
+                     result.type !== "particle" &&
+                     result.type !== "label-atlas" &&
+                     result.type !== "text" &&
+                     result.type !== "" &&
+                     result.type !== ""
+                     ) {
+                     let fullName = result.name + result.extname;
+                     console.log(result.type + " : " + fullName);
+                     }
+                     });
+                     });
+                     */
                 },
                 // build目录
                 _initResourceBuild() {

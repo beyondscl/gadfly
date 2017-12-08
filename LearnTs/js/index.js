@@ -7,14 +7,14 @@
  *  url :http://www.runoob.com/w3cnote/getting-started-with-typescript.html
  */
 var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
 
-    function __() {
-        this.constructor = d;
-    }
+        function __() {
+            this.constructor = d;
+        }
 
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
 
 /**
  * 实例

@@ -18770,29 +18770,29 @@ declare namespace dragonBones {
          * @version DragonBones 4.5
          */
         None = 0,
-        /**
-         * @language zh_CN
-         * 淡出同层的动画。
-         * @version DragonBones 4.5
-         */
+            /**
+             * @language zh_CN
+             * 淡出同层的动画。
+             * @version DragonBones 4.5
+             */
         SameLayer = 1,
-        /**
-         * @language zh_CN
-         * 淡出同组的动画。
-         * @version DragonBones 4.5
-         */
+            /**
+             * @language zh_CN
+             * 淡出同组的动画。
+             * @version DragonBones 4.5
+             */
         SameGroup = 2,
-        /**
-         * @language zh_CN
-         * 淡出同层并且同组的动画。
-         * @version DragonBones 4.5
-         */
+            /**
+             * @language zh_CN
+             * 淡出同层并且同组的动画。
+             * @version DragonBones 4.5
+             */
         SameLayerAndGroup = 3,
-        /**
-         * @language zh_CN
-         * 淡出所有动画。
-         * @version DragonBones 4.5
-         */
+            /**
+             * @language zh_CN
+             * 淡出所有动画。
+             * @version DragonBones 4.5
+             */
         All = 4,
     }
 
@@ -20247,15 +20247,15 @@ declare namespace dragonBones {
      */
     type EventStringType =
         string
-        | "start"
-        | "loopComplete"
-        | "complete"
-        | "fadeIn"
-        | "fadeInComplete"
-        | "fadeOut"
-        | "fadeOutComplete"
-        | "frameEvent"
-        | "soundEvent";
+            | "start"
+            | "loopComplete"
+            | "complete"
+            | "fadeIn"
+            | "fadeInComplete"
+            | "fadeOut"
+            | "fadeOutComplete"
+            | "frameEvent"
+            | "soundEvent";
 
     /**
      * @language zh_CN

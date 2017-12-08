@@ -148,9 +148,9 @@ public class TestHash {
      */
     public void TestHashMap() {
         HashMap hashMap = new HashMap(16, 0.6f);
-        hashMap.put("aaa","aaa");
-        hashMap.put("aaa","aaa");
-        hashMap.put("aaa","aaa");
+        hashMap.put("aaa", "aaa");
+        hashMap.put("aaa", "aaa");
+        hashMap.put("aaa", "aaa");
         System.out.println(hashMap.size());
     }
 
