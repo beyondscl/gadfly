@@ -17,7 +17,7 @@ public class CglibProxy implements MethodInterceptor {
 
     public Object getProxy(Class clazz) {
         //设置需要创建子类的类
-        System.out.println("这里是this表示当前对象 :"+this);
+        System.out.println("这里是this表示当前对象 :" + this);
         enhancer.setSuperclass(clazz);
         enhancer.setCallback(this);
         //通过字节码技术动态创建子类实例

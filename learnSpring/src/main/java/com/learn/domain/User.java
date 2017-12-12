@@ -8,6 +8,10 @@ package com.learn.domain;
  * doc:
  */
 public class User {
+    private String id;
+    private String name;
+    private int age;
+
     public String getId() {
         return id;
     }
@@ -31,8 +35,4 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
-
-    private String id;
-    private String name ;
-    private int age ;
 }

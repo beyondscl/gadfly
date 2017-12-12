@@ -8,15 +8,11 @@ package com.cat.TestSkill;
  */
 public enum TestEnum {//final
     INSTANCE, INST2;//必须第一行声明
-    private Single single;
     private static int age;
+    private Single single;
 
     TestEnum() {//私有，那么不能被继承
         single = new Single();//不能用static
-    }
-
-    public Single getInstance() { //方法不要也可以
-        return single;
     }
 
     public static void main(String[] args) {
@@ -27,6 +23,10 @@ public enum TestEnum {//final
         for (TestEnum e : TestEnum.values()) {
             System.out.println(e + " -->" + e.ordinal());
         }
+    }
+
+    public Single getInstance() { //方法不要也可以
+        return single;
     }
 }
 

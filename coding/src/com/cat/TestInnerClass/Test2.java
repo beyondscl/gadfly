@@ -15,12 +15,16 @@ interface Inter {
 
 }
 
-class InterImpl implements Inter {
+interface Inter2 {
+    Inter getInter();
+}
+
+interface Content {
 
 }
 
-interface Inter2 {
-    Inter getInter();
+class InterImpl implements Inter {
+
 }
 
 class Test2Inner {
@@ -31,21 +35,13 @@ class Test2Inner {
     private String name = "bbb";
     private String localtion = "萧山";
 
-    private class Test2InnerClass2 {//仅仅Test2Inner类可以调用,完全隐藏实现细节
-        private int age = 1;
-
-        public String sayHello() {
-            return name;
-        }
-
-    }
-
-    protected class Test2InnerClass3 {
-
-    }
-
-    public class Test2InnerClass4 {
-
+    public static void main(String[] args) {
+        Inter2 inter2 = new Inter2() {
+            public Inter getInter() {
+                return new InterImpl();
+            }
+        }; //可以访问所有
+        System.out.println();
     }
 
     //------------------------------>
@@ -59,15 +55,9 @@ class Test2Inner {
         };//需要分号
     }
 
-    //-------------------->上面等价下面
-    private class myContent implements Content {
-        //....
-    }
-
     public Content getContent1() {
         return new myContent();
     }
-    //------------------------------>
 
     static class Test2InnerClass5 {//不依赖父类
 
@@ -80,13 +70,27 @@ class Test2Inner {
         }
     }
 
-    public static void main(String[] args) {
-        Inter2 inter2 = new Inter2() {
-            public Inter getInter() {
-                return new InterImpl();
-            }
-        }; //可以访问所有
-        System.out.println();
+    private class Test2InnerClass2 {//仅仅Test2Inner类可以调用,完全隐藏实现细节
+        private int age = 1;
+
+        public String sayHello() {
+            return name;
+        }
+
+    }
+
+    protected class Test2InnerClass3 {
+
+    }
+    //------------------------------>
+
+    public class Test2InnerClass4 {
+
+    }
+
+    //-------------------->上面等价下面
+    private class myContent implements Content {
+        //....
     }
 }
 
@@ -101,9 +105,5 @@ public class Test2 extends Test2Inner {
         Test2 test2 = new Test2(1); //可以访问所有非private
         new Test2Inner.Test2InnerClass5();
     }
-}
-
-interface Content {
-
 }
 

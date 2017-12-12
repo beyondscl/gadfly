@@ -16,30 +16,28 @@ package com.cat.TestInnerClass;
  */
 interface TestInter {
     void sayHello();
+
     class MyTest implements TestInter { //还能这么写，不知道用处在哪里
+
+        public static void main(String[] args) {
+            MyTest myTest = new MyTest();
+            myTest.sayHello();
+        }
 
         public void sayHello() {
             System.out.println(111);
         }
-
-        public static void main(String[] args) {
-            MyTest  myTest = new MyTest();
-            myTest.sayHello();
-        }
     }
 }
-class TestSuper{
+
+class TestSuper {
     //只能继承才能使用
-    protected void sayHello(){
+    protected void sayHello() {
         System.out.println("super say hello");
     }
 }
+
 public class Test3 {
-
-    public  void impl(TestInter testInter){
-        testInter.sayHello();
-    }
-
 
     public static void main(String[] args) {
         Test3 test3 = new Test3();
@@ -54,11 +52,15 @@ public class Test3 {
 
         //如何在不new一个子类的情况下，调用其protected方法？
         //相当于，new了一个子类，并调用了其父类的方法
-        new TestSuper(){
+        new TestSuper() {
             @Override
-            protected void sayHello(){
+            protected void sayHello() {
                 super.sayHello();
             }
         }.sayHello();
+    }
+
+    public void impl(TestInter testInter) {
+        testInter.sayHello();
     }
 }

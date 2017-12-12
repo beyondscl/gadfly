@@ -126,6 +126,7 @@ public final class Person {
         private person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
         }
+
         private person() {
             query_ = "";
             age_ = 0;

@@ -5,22 +5,22 @@ print(os.date())
 path = "F:/gitspace/gadfly/LearnLua/evmStart.lua"
 print("测试读取到文件 io.xxxfun")
 print("------------------>普通模式")
-file = io.open(path,"r")
+file = io.open(path, "r")
 io.input(file)
 -- while io.read()~= "" do -->
 -- 	print(io.read())	
 -- end
 -- -- io.close()
 for line in io.lines() do -->读取全部文件
-	print("===>"..line)
+    print("===>" .. line)
 end
 io.close()
 
 
 print("测试追加文件")
-file = io.open(path,"a")
+file = io.open(path, "a")
 io.output(file)
-io.write("--文件追加测试"..os.date().."\n")
+io.write("--文件追加测试" .. os.date() .. "\n")
 io.flush()
 io.close()
 
@@ -42,11 +42,12 @@ print("assert,error运行没成功,命令行识别")
 pcall,xpcall,debug
 ]]
 
-function myfunction ()
-	-- print(debug.traceback("Stack trace")) -->抛出一个错误
-	print(debug.getinfo(1))
-	print("Stack trace end")
+function myfunction()
+    -- print(debug.traceback("Stack trace")) -->抛出一个错误
+    print(debug.getinfo(1))
+    print("Stack trace end")
     return 10
 end
-myfunction ()
+
+myfunction()
 print(debug.getinfo(1))

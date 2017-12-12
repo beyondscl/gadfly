@@ -16,7 +16,7 @@ package com.cat.arithmetic;
  * 数组自动扩容等(比如liast)
  * ------------------
  */
-public class TestArray {
+public class TestBinarySearch {
 
 
     public static void main(String[] args) {
@@ -24,7 +24,8 @@ public class TestArray {
         for (int i = 0; i < 1000; i++) {
             a[i] = i;
         }
-        System.out.println(TestArray.binarySearch(a, 999));
+        System.out.println(TestBinarySearch.binarySearch(a, 999));
+        System.out.println(TestBinarySearch.binarySearch2(a, 999, 0, a.length - 1));
 
     }
 
@@ -57,4 +58,25 @@ public class TestArray {
                 end = sIndex - 1;
         }
     }
+
+    /**
+     * 二分查找例子
+     * 使用递归
+     *
+     * @param array
+     * @param search
+     * @return
+     */
+    public static int binarySearch2(int[] array, int search, int low, int up) {
+        if (low > up) return -1;
+        int curIndex = (low + up) / 2;
+        if (array[curIndex] == search)
+            return array[curIndex];
+        if (array[curIndex] > search) {
+            return binarySearch2(array, search, low, curIndex - 1);
+        } else {
+            return binarySearch2(array, search, curIndex + 1, up);
+        }
+    }
+
 }

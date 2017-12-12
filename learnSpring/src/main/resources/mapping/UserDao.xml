@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.learn.dao.UserDao">
     <select id="getAllUser"
-            resultType="com.learn.domain.User" useCache="false" >
+            resultType="com.learn.domain.User" useCache="false">
         SELECT * FROM user
     </select>
     <select id="getUser" parameterType="com.learn.domain.User"
