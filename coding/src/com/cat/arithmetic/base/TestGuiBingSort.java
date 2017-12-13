@@ -1,4 +1,4 @@
-package com.cat.arithmetic;
+package com.cat.arithmetic.base;
 
 /**
  * author: 牛虻.

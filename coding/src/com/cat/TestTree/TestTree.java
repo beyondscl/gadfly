@@ -7,30 +7,75 @@ import java.util.Stack;
  * time:2017/12/12 0012
  * email:pettygadfly@gmail.com
  * doc:
+ * 二叉树的插入，查找，删除，翻转，遍历
  */
 public class TestTree {
+    //            8
+    //         3          10
+    //       1  4      9       14
+    //            6          13
     public static void main(String[] args) {
+        Tree tree = getTree();
+        System.out.println(tree.find(4));
+        tree.delete(6);
+
+        tree.delete(14);
+        tree.delete(4);
+
+        tree.delete(3);
+        tree.delete(10);
+    }
+
+    public static Tree getTree() {
         Tree tree = new Tree();
         Node node = new Node();
-        node.iData = 1;
-        node.dData = 1;
+        node.iData = 8;
+        node.dData = 8;
         tree.insert(node);
-        node = new Node();
-        node.iData = 2;
-        node.dData = 2;
-        tree.insert(node);
+
         node = new Node();
         node.iData = 3;
         node.dData = 3;
         tree.insert(node);
+
+        node = new Node();
+        node.iData = 10;
+        node.dData = 10;
+        tree.insert(node);
+
         node = new Node();
         node.iData = 4;
         node.dData = 4;
         tree.insert(node);
-        System.out.println(tree.find(4));
-        tree.displayTree();
+
+        node = new Node();
+        node.iData = 1;
+        node.dData = 1;
+        tree.insert(node);
+
+        node = new Node();
+        node.iData = 6;
+        node.dData = 6;
+        tree.insert(node);
+
+        node = new Node();
+        node.iData = 14;
+        node.dData = 14;
+        tree.insert(node);
+
+        node = new Node();
+        node.iData = 13;
+        node.dData = 13;
+        tree.insert(node);
+
+        node = new Node();
+        node.iData = 9;
+        node.dData = 9;
+        tree.insert(node);
+        return tree;
     }
 }
+
 
 class Node {
     public int iData;//id
@@ -73,7 +118,7 @@ class Tree {
     }
 
     /**
-     * 插入节点应该和删除节点一样，因为不可能只是插入叶子节点
+     * 插入节点只会插入叶子节点
      *
      * @param newNode
      */
@@ -99,6 +144,79 @@ class Tree {
                 }
             }
         }
+    }
+
+    /**
+     * 删除情况
+     * 1.删除叶子节点
+     * 2.删除的节点有1个子节点
+     * 3.删除的节点有2个子节点
+     *
+     * @param key
+     * @return
+     */
+    public void delete(int key) {
+        if (this.root == null) return;
+        if (this.root.iData == key) {
+            this.root = null;
+        }
+        Node current = root;
+        Node parent = current;
+        Node left;
+        Node right;
+        boolean isLeft = false;
+        while (true) {
+            left = current.leftNode;
+            right = current.rightNode;
+            if (current.iData == key) {
+                current = null;
+                if (left == null && right == null) { //删除叶子节点
+                    if (isLeft)
+                        parent.leftNode = current;
+                    else
+                        parent.rightNode = current;
+                } else if (!(left != null && right != null)) { //有一个子节点
+                    if (isLeft)
+                        parent.leftNode = left;
+                    else
+                        parent.rightNode = left;
+
+                } else { //2个子节点获取后继节点
+
+                }
+            } else if (current.iData > key) {
+                parent = current;
+                current = left;
+                isLeft = true;
+            } else {
+                parent = current;
+                current = right;
+                isLeft = false;
+            }
+            if (current == null) return;
+        }
+    }
+
+    /**
+     * 获取后继节点
+     * 删除有2个子节点的节点
+     *
+     * @return Node
+     */
+    public Node getSucceedNode(Node delNode) {
+        Node successorParent = delNode;
+        Node successor = delNode;
+        Node current = delNode.rightNode;   // 寻找右节点
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.leftNode;      // 寻找左节点
+        }
+        if (successor != delNode.rightNode) {
+            successorParent.leftNode = successor.rightNode;
+            successor.rightNode = delNode.rightNode;
+        }
+        return successor;
     }
 
     public void displayTree() {
