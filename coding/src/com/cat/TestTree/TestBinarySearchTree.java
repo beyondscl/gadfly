@@ -7,25 +7,41 @@ import java.util.Stack;
  * time:2017/12/12 0012
  * email:pettygadfly@gmail.com
  * doc:
- * 二叉树的插入，查找，删除，翻转，遍历
+ * 【画图画图画图画图画图画图画图画图画图】
+ * 如果插入的是随机数据，执行效果相对较好
+ * 二叉树的插入，查找，删除
+ * 翻转:
+ * 遍历:前，中，后，层序遍历
+ * 压缩数据:哈夫曼编码
+ * 频率表,哈夫曼树实现解码 -->作业
  */
-public class TestTree {
+public class TestBinarySearchTree {
     //            8
     //         3          10
     //       1  4      9       14
     //            6          13
     public static void main(String[] args) {
         Tree tree = getTree();
+        tree.displayTree();
         System.out.println(tree.find(4));
         tree.delete(6);
+        tree.displayTree();
 
         tree.delete(14);
         tree.delete(4);
+        tree.displayTree();
 
         tree.delete(3);
         tree.delete(10);
+        tree.displayTree();
+
     }
 
+    /**
+     * 获取一颗测试树
+     *
+     * @return
+     */
     public static Tree getTree() {
         Tree tree = new Tree();
         Node node = new Node();
@@ -169,20 +185,29 @@ class Tree {
             left = current.leftNode;
             right = current.rightNode;
             if (current.iData == key) {
-                current = null;
                 if (left == null && right == null) { //删除叶子节点
+                    current = null;
                     if (isLeft)
                         parent.leftNode = current;
                     else
                         parent.rightNode = current;
                 } else if (!(left != null && right != null)) { //有一个子节点
+                    current = null;
                     if (isLeft)
                         parent.leftNode = left;
                     else
                         parent.rightNode = left;
 
-                } else { //2个子节点获取后继节点
+                } else { //2个子节点获取后继节点 ,注意节点的修改，判断和特殊情况
+                    Node succeed = getSucceedNode(current);
+                    if (isLeft) {
+                        parent.leftNode = succeed;
+                    } else {
+                        parent.rightNode = succeed;
+                    }
+                    succeed.leftNode = left;
 
+                    current = null; //退出
                 }
             } else if (current.iData > key) {
                 parent = current;
@@ -201,58 +226,94 @@ class Tree {
      * 获取后继节点
      * 删除有2个子节点的节点
      *
+     * 【请画图写代码】，多写几种情况
      * @return Node
      */
     public Node getSucceedNode(Node delNode) {
-        Node successorParent = delNode;
-        Node successor = delNode;
-        Node current = delNode.rightNode;   // 寻找右节点
+        Node successorParent = delNode; //后继节点的父节点
+        Node successor = delNode; //后继节点
+        Node current = delNode.rightNode; //寻找第一个右节点
         while (current != null) {
             successorParent = successor;
             successor = current;
-            current = current.leftNode;      // 寻找左节点
+            current = current.leftNode; // 只寻找左节点,直到某个节点的左节点为空
         }
         if (successor != delNode.rightNode) {
-            successorParent.leftNode = successor.rightNode;
-            successor.rightNode = delNode.rightNode;
+            successorParent.leftNode = successor.rightNode;//父节点:只需要修改左子节点
+            successor.rightNode = delNode.rightNode; //不加判断就是一个死循环
         }
         return successor;
     }
 
+    /**
+     * 前缀遍历:先根在左在又
+     * 8 3 1 4 6 10 9 14 13
+     *
+     * @return
+     */
+    public Node[] prefix() {
+        return null;
+    }
+
+    /**
+     * 中缀遍历:先根在左在又
+     * 1 3 4 6 8 9 10 13 14
+     *
+     * @return
+     */
+    public Node[] middle() {
+        return null;
+    }
+
+    /**
+     * 后缀遍历:先根在左在又
+     * 1 6 4 3 9 13 14 10 8
+     *
+     * @return
+     */
+
+    public Node[] suffix() {
+        return null;
+    }
+
+    /**
+     * 层序遍历
+     * 打印树
+     * 用栈来实现的，将每一层节点放入栈中，依次打印
+     */
     public void displayTree() {
         Stack gloabStack = new Stack();
         gloabStack.push(root);
         int nBlank = 32;
         boolean isRowEmpty = false;
-        System.out.println("---------------->");
+        System.out.println("--------------------------------");
         while (isRowEmpty == false) {
             Stack localStack = new Stack();
             isRowEmpty = true;
             for (int i = 0; i < nBlank; i++) {
-                System.out.println(' ');
+                System.out.print(' ');
             }
             while (gloabStack.isEmpty() == false) {
                 Node temp = (Node) gloabStack.pop();
                 if (temp != null) {
-                    System.out.println(temp.iData);
+                    System.out.print(temp.iData);
                     localStack.push(temp.leftNode);
                     localStack.push(temp.rightNode);
-                    if (temp.leftNode != null || temp.rightNode != null) {
+                    if (temp.leftNode != null || temp.rightNode != null)
                         isRowEmpty = false;
-                    }
                 } else {
-                    System.out.println("--");
+                    System.out.print("--");
                     localStack.push(null);
                     localStack.push(null);
                 }
                 for (int i = 0; i < nBlank * 2 - 2; i++)
-                    System.out.println(' ');
+                    System.out.print(' ');
             }
             System.out.println();
             nBlank /= 2;
-            while (gloabStack.isEmpty() == false)
+            while (localStack.isEmpty() == false)
                 gloabStack.push(localStack.pop());
         }
-        System.out.println("---------------->");
+        System.out.println("--------------------------------");
     }
 }
