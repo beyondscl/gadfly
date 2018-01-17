@@ -24,7 +24,7 @@ import java.util.Set;
  * buffer　数据交互必须使用buffer和channel
  * 八种数据类型除开Boolean，[byte,short,int,long, char , float,double]buffer
  * channel 主要分为:selectorChannel|fileChannel
- * selector 轮训活动的channel，【因为轮训所以叫做同步阻塞，如果是采用回调才能叫做真正的异步非阻塞】
+ * selector 轮训活动的channel，【因为轮训所以叫做同步非阻塞，如果是采用回调才能叫做真正的异步非阻塞】
  * <p/>
  * io流是半双工的:一个流，同时只能单向传输
  * socket是全双工的:通道同时可以双向传输
@@ -60,7 +60,7 @@ public class ServerSocketv3 {
 //        Set selectedKeys = selector.selectedKeys();
 //        Iterator it = selectedKeys.iterator();
 //        while (it.hasNext()) {
-//            SelectionKey key2 = (SelectionKey) it.next();
+//            SelectionKey key2 = (SelectionKey) it.getMsg();
 //
 //        }
 //        //6接入客户端，tcp三次握手，建立物理链路
