@@ -1,0 +1,14 @@
+include "config.common"
+
+nodename = "client"
+
+luaservice = luaservice .. "./server/client/?.lua;"
+-- 将添加到 package.path 中的路径，供 require 调用。
+lua_path = lua_path .. "./server/client/?.lua;"..
+		   	"./config/?.lua;"..
+		   	"./protocol/?.lua;"
+snax = lua_path
+
+
+-- 后台模式
+--daemon = --"./gate1.pid"

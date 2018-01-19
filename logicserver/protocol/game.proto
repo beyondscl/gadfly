@@ -1,0 +1,246 @@
+package game;
+
+message TableInfo {
+    message player {
+        required int32 uid = 1;  //用户uid
+        required string nickname = 2; //用户昵称
+        required int32 seatid = 3; //用户座位
+        required int32 sex = 4; //性别
+        required int32 online = 5; //是否在线，1在线，0不在线
+        optional int32 ready = 6; //是否已经准备，1准备，0为准备
+        optional int32 score = 7; //当前分值
+        optional uint64 gold = 8; //金币
+        optional int32 money = 9; //红包
+    }
+
+    required int32 owner = 1; //房主
+    required int32 endtime = 2; //0表示已经开局，时间戳表示房间解散的时间
+    required int32 gameid = 3; //游戏ID
+    required int32 times = 4; //游戏局数
+    required int32 playedtimes = 5; //已经进行的局数
+    required int32 score = 6; //低分
+    required int32 paytype = 7; //1表示AA，2表示房主付费
+    required int32 code = 8; //房间号
+    repeated player players = 9; //玩家列表
+}
+
+
+message SitdownNtf {
+    required int32 uid = 1;
+    required int32 seatid = 2;
+    optional string nickname = 3;
+    optional string headimg = 4;
+}
+
+message GetReadyNtf {
+    required int32 uid = 1;
+    required int32 seatid = 2;
+}
+
+message GameStart {
+    
+}
+
+message AskMaster {
+    required int32 time = 1;
+    optional int32 seatid = 2;
+    optional int32 opt = 3;
+}
+
+message GetMaster {
+    required int32 result = 1; //1表示叫庄，0表示不叫
+    required int32 uid = 2; 
+}
+
+message SetMaster {
+    required int32 uid = 1;
+    optional int32 score = 2;
+}
+
+message AskRate {
+    required int32 time = 1;
+    optional int32 master = 2;
+    optional int32 seatid = 3;
+    optional int32 opt = 4;
+}
+
+message SetRate {
+    required int32 rate = 1;
+    required int32 uid = 2;
+}
+
+message AddCard {
+    required int32 uid = 1;
+    required int32 seatid = 2;
+    required int32 count = 3;
+    repeated int32 cards = 4;
+}
+
+message ShowCard {
+    required int32 uid = 1;
+    required int32 seatid = 2;
+    repeated int32 cards = 3;
+}
+
+message GameResult {
+    required int32 master = 1;
+    required int32 count = 2;
+    repeated int32 infos = 3; //{uid,cur_socre,score,uid,cur_socre,socre,uid,cur_socre,socre....}
+    repeated int32 cards = 4; //{cardid,cardid,cardid....}
+}
+
+message GameEnd {
+    message info {
+        required int32 tongsha = 1; //通杀
+        required int32 tongpei = 2; //通赔
+        required int32 niuniu = 3; //牛牛
+        required int32 wuniu = 4; //无牛
+        required int32 shengli = 5; //胜利
+        required int32 score = 6; //输赢分值
+        required int32 uid = 7;
+        required string nickname = 8;
+    }
+
+
+    required int32 round = 1; //总局数
+    repeated info infos = 2; 
+}
+
+message LeaveTableNtf {
+    required int32 uid = 1;
+    optional int32 result = 2; //如果有值，1000表示离开房间失败，1001表示房间由于没人而解散，1002表示游戏正常结束了
+}
+
+message UserOffline {
+    required int32 uid = 1;
+}
+
+message UserOnline {
+    required int32 uid = 1;
+}
+
+message AskConfirmCards {
+    required int32 time = 1;
+}
+
+message ConfirmCards {
+    required int32 uid = 1;
+}
+
+message ChatNtf {
+    required int32 type = 1;
+    required int32 to = 2;
+    required int32 msg = 3;
+    required int32 uid = 4;
+}
+
+//表情发送失败返回
+message ChatNtfResult {
+    required int32 result = 1;  //1扣款失败
+}
+
+message StartRound {
+    required int32 round = 1;
+    required int32 total = 2;
+}
+
+message NiuNiuHistroy {
+    message histroy {
+        required int32 master = 1; //庄的UID
+        required int32 count = 2; //玩家人数
+        required int32 round = 3; //当前局数
+        repeated int32 infos = 4; //{uid,cur_socre,score,uid,cur_socre,socre,uid,cur_socre,socre....}
+        repeated int32 cards = 5; //{cardid,cardid,cardid....}
+    }
+
+    repeated histroy list = 1; 
+}
+
+message EnterTable {
+    required int32 uid = 1;
+    required string nickname = 2;
+    required int32 sex = 3;
+}
+
+message GmChangeCards{
+    repeated int32 cards = 1;
+    required int32 uid = 2;
+}
+
+//牛牛游戏恢复
+message NiuNiuResume {
+    message playercard{
+        required int32 uid = 1;
+        required int32 count = 2;
+        repeated int32 cards = 3;
+    }
+    required int32 status = 1;          //当前状态
+    required int32 time = 2;            //当前状态剩余时间
+    repeated playercard info = 3;       //玩家的卡牌
+}
+
+//断线重连需要恢复现场的时候发
+message Resume {
+}
+
+
+message AskPlayCard {
+    required int32 seatid = 1;
+    required int32 time = 2;
+    required int32 cardtype = 3;
+    repeated int32 cards = 4;
+    repeated int32 avatarCards = 5;
+}
+
+message PlayCard {
+    required int32 uid = 1;
+    repeated int32 cards = 2;
+    repeated int32 avatarCards = 3;
+    optional int32 cardtype = 4;
+}
+
+message AddFish {
+    message FishInfo {
+        required int32 type = 1; //需要生成的鱼的类型,填0表示生成一个鱼父级
+        required int32 id = 2; //鱼的ID
+        required int32 delay = 3; //多少秒后创建
+        optional int32 parent = 4; //属于哪个parent，不填则为独立的鱼
+        optional int32 time = 5; //如果填写，那么表示该鱼/父级的存在时间
+        optional int32 pathOperation = 6; //需要对路径进行的运算操作,1=+，2=-，3=*，4=/
+        repeated int32 path = 7; //鱼的路径，如果不存在路径则不填
+        repeated int32 pos = 8; //鱼的初始位置，不存在不填
+        repeated int32 rot = 9; //出的初始姿态，不存在不填
+        repeated int32 pathParams = 10; //一个vector3参数，调整path的每个坐标值
+        optional uint64 addtime = 11;//添加的时间
+    }
+
+    repeated FishInfo fishes = 2;
+}
+
+//斗地主牌局结束协议
+message GameLandlordEnd {
+    message info {
+        required int32 uid = 1;
+        required string nickname = 2;
+        required int32 wincount = 3; //胜利局数
+        required int32 losecount = 4; //输局数
+        required int32 totalscore = 5; //输赢总分值
+        required int32 maxscore = 6; //单局赢最高分
+        required int32 bombcount = 7; //单局赢最高分 -> 炸弹数量
+    }
+    required int32 round = 1; //总局数
+    repeated info infos = 2;
+}
+
+//三人斗地主断线重连
+message GameLandResume {
+    message playercard {
+        required int32 uid = 1;
+        required int32 count = 2;
+        repeated int32 cards = 3;
+    }
+    required int32 status = 1; //当前状态
+    required int32 time = 2; //当前状态剩余时间
+    repeated playercard info = 3; //玩家的卡牌
+    repeated int32 turncards = 4; //当前出牌数据
+}

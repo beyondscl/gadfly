@@ -1,0 +1,7 @@
+LengTingxue
+pettygadfly
+
+
+conn this -> 10.0.20.66  7101
+start
+../skynet/skynet ./etc/config.game 

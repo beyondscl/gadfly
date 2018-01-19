@@ -1,0 +1,131 @@
+// 代码风格
+//消息名：使用骆驼风格的大小写命名，即单词首字母大写
+//字段名：全部小写
+//枚举名：使用骆驼风格的大小写命名
+//枚举值：全部大写，使用下划线分隔
+
+package user;
+
+//user包中的协议如果需要区别接收的客户端，需要在协议中带clientid（小写）字段。
+//如果协议中有clientid字段，则客户端接收的时候会自动路由,
+//如果没有clientid（optional也属于有，而不属于没有）字段，则会广播给所有客户端
+
+message UserInfoRequest {
+	required int32 uid = 1;
+	optional int32 type = 2;   //请求的数据类型 由UserInfoResonpse的内容进行顺序编号
+}
+
+message UserInfoResonpse {
+	optional int32 uid = 1;
+	optional string nickname = 2;
+	optional int32 gold = 3;
+	optional int32 bank = 4;
+	optional int32 exp = 5;
+	optional int32 vipexp = 6;
+	optional int32 sex = 7;
+	optional string headimg = 8;
+}
+
+message CheckReconnectReq{
+	
+}
+
+message CheckReconnectRep{
+	required int32 gameid = 1;
+}
+
+message ReconnectTableReq{
+	required int32 session = 1;
+	required int32 result = 2;//0表示加入，其他值表示放弃加入
+	required int32 index = 3;//0表示恢复现场的方式断线重连，大于0表示闪断方式断线重连
+	optional int32 clientid = 4;  //断线重连也需要更新clientid
+}
+
+message ReconnectTableRep{
+	required int32 result = 1;//0表示加入成功，其他值表示失败
+	required int32 session = 2;
+	optional int32 clientid = 3;
+}
+
+//快速加入
+message QuickJoinRequest {
+	optional int32 code = 1;
+	optional int32 gameid = 2;
+	optional int32 pay = 3;
+	optional int32 score = 4;
+	optional int32 times = 5;
+}
+
+message QuickJoinResonpse {
+	required int32 result = 1; //0成功，1失败
+}
+
+message GameListReq {
+}
+
+message GameListRep {
+	message game {
+		required int32 time = 1;
+		required int32 endtime = 2;
+		required int32 paytype = 3;
+		required int32 times = 4;
+		required int32 score = 5;
+		required int32 gameid = 6;
+		required int32 code = 7;
+	}
+
+	repeated game list = 1;
+}
+
+message HistroyListReq {
+	//请求战绩
+}
+
+message HistroyListRep {
+	//战绩返回
+	message info {
+		required int32 index = 1; //用于查询详细战绩内容的索引
+		required int32 gameid = 2;
+		required int32 code = 3;
+		required int32 time = 4;
+		repeated int32 scores = 5;
+		repeated string nicknames = 6;
+	}
+
+	repeated info list = 1;
+}
+
+message SingleHistroyReq {
+	//根据index请求详细的战绩内容
+	required int32 index = 1;
+}
+
+message HistroyGameEnd {
+	message info {
+		required int32 tongsha = 1; //通杀
+		required int32 tongpei = 2; //通赔
+		required int32 niuniu = 3; //牛牛
+		required int32 wuniu = 4; //无牛
+		required int32 shengli = 5; //胜利
+		required int32 score = 6; //输赢分值
+		required int32 uid = 7;
+		required string nickname = 8;
+	}
+
+
+	required int32 round = 1; //总局数
+	repeated info infos = 2; 
+}
+
+
+message HistroyInfo {
+	message histroy {
+		required int32 master = 1; //庄的UID
+		required int32 count = 2; //玩家人数
+		required int32 round = 3; //当前局数
+		repeated int32 infos = 4; //{uid,cur_socre,score,uid,cur_socre,socre,uid,cur_socre,socre....}
+		repeated int32 cards = 5; //{cardid,cardid,cardid....}
+	}
+
+	repeated histroy list = 1; 
+}

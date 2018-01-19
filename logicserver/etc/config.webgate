@@ -1,0 +1,17 @@
+include "config.common"
+
+nodename = "webgate1"
+
+luaservice = luaservice .. "./server/gate/?.lua;"
+-- 将添加到 package.path 中的路径，供 require 调用。
+lua_path = lua_path .. "./server/gate/?.lua;"..
+		   	"./config/?.lua;"..
+		   	"./protocol/?.lua;"
+snax = lua_path
+
+port = 7002					-- 监听端口
+max_client = 5000
+dbs_count = 1 --userdata节点的数量
+
+-- 后台模式
+--daemon = --"./"..nodename..".pid"
