@@ -1,0 +1,8 @@
+syntax = "proto3"; //版本
+option java_package = "com.monkey.outjava";
+option java_outer_classname = "Person";
+message person {
+    string query = 1; //类型，字段，长度
+    int32 age = 2;
+    double money = 3;
+}
