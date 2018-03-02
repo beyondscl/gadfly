@@ -1,11 +1,10 @@
-.gitignore
 *.idea
 *.iml
 *.class
 *.war
 target/
 out/
-*.*/classes/.*
+*/classes/*
 coding/src/com/monkey/outjava/com/
 coding/web/WEB-INF/classes/
 learnSpring/target/
