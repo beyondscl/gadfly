@@ -5,7 +5,7 @@ package com.cat.TestProxy.TestJdkProxy;
  * time:2017/11/16 0016
  * email:pettygadfly@gmail.com
  * doc:
- * jdk 基于方式
+ * jdk 基于方式接口
  * Proxy,InvocationHandler
  * cglib 继承方式(重写类被代理类的所有方法) 基于asm内存反射，应用广泛效率高
  * 优点：CGLib创建的动态代理对象性能比JDK创建的动态代理对象的性能高不少，
