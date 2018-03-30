@@ -14,7 +14,7 @@ import redis.clients.jedis.Jedis;
  */
 @Service
 public class TestRedis {
-    public final static String host = "192.168.0.227";
+    public final static String host = "39.108.178.35";
     public final static int port = 6379;
     public final static Jedis jedis = new Jedis(host, port, 1000);
 
@@ -24,7 +24,8 @@ public class TestRedis {
 
     @Test
     public void addString() {
-
+        jedis.auth("password");
+        jedis.set("name ","bbb");
     }
 
 }
