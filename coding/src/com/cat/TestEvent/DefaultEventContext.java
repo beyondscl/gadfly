@@ -12,8 +12,6 @@ public class DefaultEventContext implements EventContext {
 
     //提供单例
     private static DefaultEventContext defaultEventContext = null;
-    //事件类型
-    private int type;
     //存储事件监听
     private CopyOnWriteArrayList<EventListener> list = new CopyOnWriteArrayList<EventListener>();
 
@@ -42,14 +40,4 @@ public class DefaultEventContext implements EventContext {
         }
         return defaultEventContext;
     }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-
 }
